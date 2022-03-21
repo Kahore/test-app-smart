@@ -8,13 +8,26 @@ import {
 } from "@mui/material";
 import { Character } from "../../model/character";
 import { NavLink } from "react-router-dom";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles(() => ({
+  cardHover: {
+    "&:hover": {
+      backgroundColor: "#F9F9F7",
+    },
+  },
+}));
 
 const CharactersListItem: React.FC<{ character: Character }> = ({
   character,
 }) => {
+  const classes = useStyles();
   return (
     <NavLink to={`/character/${character.id}`}>
-      <Card sx={{ maxWidth: 345, height: "100%" }}>
+      <Card
+        sx={{ maxWidth: 345, height: "100%" }}
+        className={classes.cardHover}
+      >
         <CardHeader
           title={character.name}
           subheader={`${character.series.available} series, ${character.comics.available} comics, ${character.stories.available} stories`}
