@@ -10,6 +10,8 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import SearchWrapper from "../utils/SearchWrapper";
+import Search from "../search/Search";
 
 function a11yProps(index: number) {
   return {
@@ -21,8 +23,10 @@ function a11yProps(index: number) {
 const TabsGeneric: React.FC<{
   value: number;
   tabs: any[];
+  onSearch?(query: string): void;
+  onClearSearch?(query: undefined): void;
   onSetValue(event: React.SyntheticEvent, newValue: number): void;
-}> = ({ value, onSetValue, tabs }) => {
+}> = ({ value, tabs, onSetValue, onSearch, onClearSearch }) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -106,6 +110,13 @@ const TabsGeneric: React.FC<{
             />
           ))}
         </Tabs>
+        {typeof onSearch !== "undefined" ? (
+          <SearchWrapper>
+            {typeof onSearch !== "undefined" ? (
+              <Search onSearch={onSearch} onClearSearch={onClearSearch} />
+            ) : null}
+          </SearchWrapper>
+        ) : null}
       </>
     </TabsWrapper>
   );
