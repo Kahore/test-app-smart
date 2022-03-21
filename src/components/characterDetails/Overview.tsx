@@ -8,16 +8,21 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CounterCard from "./CounterCard";
+import { NavLink } from "react-router-dom";
 
 const CharacterDetailsOverview: React.FC<{ character: Character }> = ({
   character,
 }) => {
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} sm={6} sx={{ display: "flex" }}>
         <Card sx={{ display: "flex", height: "100%" }}>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
+            <NavLink to={"/"}>
+              <ArrowBackIcon sx={{ m: 1 }} />
+            </NavLink>
             <CardContent sx={{ flex: "1 0 auto" }}>
               <Typography component={"div"} variant={"h5"}>
                 {character.name}

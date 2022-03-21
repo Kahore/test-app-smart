@@ -57,7 +57,5 @@ a {
   overflow-y: auto;
   overflow-x: hidden;
   height: 90vh;
-  padding: 32px 32px 0 32px;
-  /*width: calc(100vw - 245px);*/
-  /*margin-left: 245px;*/
+  padding: 32px 0 0 0;
 }

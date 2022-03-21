@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { AppBar, Box, Toolbar } from "@mui/material";
+import { AppBar, Box, Container, Toolbar } from "@mui/material";
 import TabPanel from "../components/custom/TabPanel";
 import useTabs from "../utils/hooks/useTabs";
 import CharacterDetailsOverview from "../components/characterDetails/Overview";
@@ -73,25 +73,31 @@ const CharacterDetailsView = () => {
           )}
         </Toolbar>
       </AppBar>
-      <Box component="main" sx={{ flexGrow: 1 }} className={"Root__main-view"}>
-        <TabPanel value={value} index={0}>
-          {character ? (
-            <CharacterDetailsOverview character={character} />
-          ) : null}
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <CharacterDetailsComics />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <CharacterDetailsStories />
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          <CharacterDetailsEvents />
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          <CharacterDetailsSeries />
-        </TabPanel>
-      </Box>
+      <Container className={"Root__top-container"}>
+        <Box
+          component="main"
+          sx={{ flexGrow: 1 }}
+          className={"Root__main-view"}
+        >
+          <TabPanel value={value} index={0}>
+            {character ? (
+              <CharacterDetailsOverview character={character} />
+            ) : null}
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <CharacterDetailsComics />
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <CharacterDetailsStories />
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            <CharacterDetailsEvents />
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            <CharacterDetailsSeries />
+          </TabPanel>
+        </Box>
+      </Container>
     </>
   );
 };
