@@ -36,7 +36,7 @@ const App = () => {
             key={route.path}
             path={route.path}
             element={
-              <Container>
+              <Container className={"Root__top-container"}>
                 <Component title={route.title} />
               </Container>
             }

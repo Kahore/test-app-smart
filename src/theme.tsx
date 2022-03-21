@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material";
 import { MuiContainer } from "./theme/MuiContainer";
-import { MuiPaper } from "./theme/MuiPaper";
 import { MuiPagination } from "./theme/MuiPagination";
+import { MuiTab } from "./theme/MuiTab";
 
 const appTheme = createTheme({
   palette: {
@@ -29,8 +29,8 @@ const appTheme = createTheme({
   },
   components: {
     MuiContainer,
+    MuiTab,
     MuiPagination,
-    MuiPaper,
   },
 });
 export default appTheme;

@@ -1,6 +1,7 @@
 import { PaginationCounters } from "./misc";
 
 export type StoryItem = "cover" | "interiorStory";
+export type CharacterUrlType = "detail" | "wiki" | "comiclink";
 
 export interface Character {
   comics: CharacterSubDetail;
@@ -13,7 +14,7 @@ export interface Character {
   series: CharacterSubDetail;
   stories: CharacterStory;
   thumbnail: { path: string; extension: "jpg" };
-  urls: [];
+  urls: CharacterUrl[];
 }
 
 export interface CharacterSubDetail {
@@ -31,6 +32,10 @@ export interface CharacterStory extends CharacterSubDetail {
 }
 export interface CharacterStoryItem extends CharacterSubDetailItem {
   type: StoryItem;
+}
+export interface CharacterUrl {
+  type: CharacterUrlType;
+  url: string;
 }
 
 export interface CharactersGet extends PaginationCounters {

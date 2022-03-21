@@ -23,7 +23,7 @@ const CharactersListItem: React.FC<{ character: Character }> = ({
           component="img"
           height="194"
           image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-          alt="Paella dish"
+          alt="Char img"
         />
         <CardContent>
           <Typography variant="body2" color="text.secondary">

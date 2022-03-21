@@ -9,8 +9,7 @@ import usePagination from "../../utils/hooks/usePagination";
 
 const CharactersList = () => {
   const { isLoading, loadingHandler } = useIsLoading();
-  const { page, totalPages, handlePagination, handleTotal } =
-    usePagination();
+  const { page, totalPages, handlePagination, handleTotal } = usePagination();
 
   const [characters, setCharacters] = React.useState<Character[]>([]);
 
